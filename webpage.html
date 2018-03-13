@@ -30,7 +30,11 @@ else if(document.getElementById("fullName").value!="" && document.getElementById
 alert('Full Name:'+document.getElementById("fullName").value +"\n"+ 'Email Id :' + document.getElementById("emailAddress").value +"\n"+ 'Message:'+document.getElementById("comment").value);
  document.myForm.reset();
 }
-
+	var fullNameforValidation=document.getElementById("fullName").val();
+if((fullNameforValidation!="" && fullNameforValidation != null)
+{
+	document.getElementById("valFullName").show
+}
 }
 
 </script>
@@ -105,12 +109,18 @@ alert('Full Name:'+document.getElementById("fullName").value +"\n"+ 'Email Id :'
 <div class="form_container">
     <div class="form-group">
      
-      <input type="text" class="form-control" id="fullName" placeholder="Full Name" name="fname">
+
+<input class="form-control input-validation-error" placeholder="Enter Fullname" type="text" data-val="true" data-val-required="The name field is required." id="fullName" name="fname" value="">
+	  <div class="errors-container">
+                <span class="error-msg field-validation-error" id="valFullName"  data-valmsg-for="Email" data-valmsg-replace="true"></span>
+            </div>
     </div>
 
     <div class="form-group">
-      
-      <input type="email"  class="form-control" id="emailAddress" placeholder="Enter email" name="eAdress">
+	  <input class="form-control input-validation-error" placeholder="Enter email" type="email" data-val="true" data-val-required="The Email field is required." id="emailAddress" name="eAdress" value="">
+	  <div class="errors-container">
+                <span class="error-msg field-validation-error" data-valmsg-for="Email" data-valmsg-replace="true"></span>
+            </div>
 	  </div>
 	
 	   <div class="form-group">
